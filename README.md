@@ -53,8 +53,9 @@ let heading = [
 ];
 
 //Here you specify the export structure
-var specification = {
-  customer_name: { // <- the key should match the actual data key
+var specification = [
+  { 
+    id:'customer_name',// <- the key should match the actual data key
     displayName: 'Customer', // <- Here you specify the column header
     headerStyle: styles.headerDark, // <- Header style
     cellStyle: function(value, row) { // <- style renderer function
@@ -64,7 +65,8 @@ var specification = {
     },
     width: 120 // <- width in pixels
   },
-  status_id: {
+  {
+    id:'status_id',
     displayName: 'Status',
     headerStyle: styles.headerDark,
     cellFormat: function(value, row) { // <- Renderer function, you can access also any row.property
@@ -72,13 +74,14 @@ var specification = {
     },
     width: '10' // <- width in chars (when the number is passed as string)
   },
-  note: {
+  {
+    id:'note',
     displayName: 'Description',
     headerStyle: styles.headerDark,
     cellStyle: styles.cellPink, // <- Cell style
     width: 220 // <- width in pixels
   }
-}
+]
 
 // The data set should have the following shape (Array of Objects)
 // The order of the keys is irrelevant, it is also irrelevant if the
